@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="6" failures="0" time="0.000" name="store-service/internal/cart">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="cart" name="Test_GetCart_Should_be_Have_Data_and_Receive_Point_4" time="0.000"></testcase>
+		<testcase classname="cart" name="Test_GetCart_Should_be_Empty" time="0.000"></testcase>
+		<testcase classname="cart" name="Test_AddCart_Input_Submitted_First_Product_Should_be_Have_1_Quantity_and_Receive_Point_43" time="0.000"></testcase>
+		<testcase classname="cart" name="Test_AddCart_Input_Submitted_More_Product_Should_be_Have_2_Quantity_and_Receive_Point_86" time="0.000"></testcase>
+		<testcase classname="cart" name="Test_UpdateCart_Input_Submitted_Quantity_2_Should_be_Have_2_Quantity_and_Receive_Point_9" time="0.000"></testcase>
+		<testcase classname="cart" name="Test_UpdateCart_Input_Submitted_Quantity_0_Should_be_Have_0_Quantity_and_Receive_Point_0" time="0.000"></testcase>
+	</testsuite>
+	<testsuite tests="6" failures="0" time="0.000" name="store-service/internal/common">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="common" name="Test_ConvertToThb_Input_123_Should_be_4424_Point_31_and_Point_305572" time="0.000"></testcase>
+		<testcase classname="common" name="Test_ConvertToThb_Input_0_Should_be_0" time="0.000"></testcase>
+		<testcase classname="common" name="Test_ConvertToThb_Input_Minus_123_Should_be_Minus_4424_Point_31_and_Point_305572" time="0.000"></testcase>
+		<testcase classname="common" name="Test_CalculatePoint_Input_599_Point_999_Should_be_Return_5" time="0.000"></testcase>
+		<testcase classname="common" name="Test_CalculatePoint_Input_Minus_599_Point_999_Should_be_Return_0" time="0.000"></testcase>
+		<testcase classname="common" name="Test_CalculatePoint_Input_0_Point_999_Should_be_Return_0" time="0.000"></testcase>
+	</testsuite>
+	<testsuite tests="8" failures="0" time="0.000" name="store-service/internal/order">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_OrderID_8004359103" time="0.000"></testcase>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_Return_Error_Points_not_Enough" time="0.000"></testcase>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_Return_No_Product_in_Order_Error" time="0.000"></testcase>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_Return_Create_Order_Error" time="0.000"></testcase>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_Return_Create_Shipping_Error" time="0.000"></testcase>
+		<testcase classname="order" name="Test_CreateOrder_Input_Submitted_Order_Should_be_Return_Create_Order_Product_Error" time="0.000"></testcase>
+		<testcase classname="order" name="Test_OrderBurnPoint_Input_Burn_Points_100_Should_be_Return_Total_Point_50" time="0.000"></testcase>
+		<testcase classname="order" name="Test_OrderBurnPoint_Input_Burn_Points_100_Should_be_Return_Totol_Point_Error" time="0.000"></testcase>
+	</testsuite>
+	<testsuite tests="8" failures="0" time="0.000" name="store-service/internal/payment">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_TrackingNumber_KR_307676366_No_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_OrderRepository_GetOrderByID_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_BankGateway_GetCardDetail_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_BankGateway_Payment_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_OrderRepository_GetOrderProduct_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_ProductRepository_UpdateStock_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_OrderRepository_UpdateOrderTransaction_Error" time="0.000"></testcase>
+		<testcase classname="payment" name="Test_ConfirmPayment_Input_OrderID_8004359103_Should_Be_Return_ShippingGateway_GetTrackingNumber_Error" time="0.000"></testcase>
+	</testsuite>
+	<testsuite tests="4" failures="0" time="0.000" name="store-service/internal/point">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="point" name="Test_DeductPoint_Input_Amount_100_Should_be_Point_100" time="0.000"></testcase>
+		<testcase classname="point" name="Test_DeductPoint_Input_Amount_Minus_100_Should_be_Error" time="0.000"></testcase>
+		<testcase classname="point" name="Test_TotalPoint_Point_100_and_50_Should_be_Point_150" time="0.000"></testcase>
+		<testcase classname="point" name="Test_TotalPoint_Point_100_and_Minus_50_Should_be_Point_50" time="0.000"></testcase>
+	</testsuite>
+	<testsuite tests="4" failures="0" time="0.000" name="store-service/internal/product">
+		<properties>
+			<property name="go.version" value="go1.22.5"></property>
+		</properties>
+		<testcase classname="product" name="Test_GetProducts_Should_be_Return_Total_10031_and_Products_include_PriceTHB" time="0.000"></testcase>
+		<testcase classname="product" name="Test_GetProducts_Should_be_Return_GetProducts_Error" time="0.000"></testcase>
+		<testcase classname="product" name="Test_GetProductByID_Should_be_Return_ProductDetail_ID_1_include_PriceTHB" time="0.000"></testcase>
+		<testcase classname="product" name="Test_GetProductByID_Should_be_Return_GetProductByID_Error" time="0.000"></testcase>
+	</testsuite>
+</testsuites>

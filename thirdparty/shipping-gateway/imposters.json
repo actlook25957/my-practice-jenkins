@@ -1,0 +1,29 @@
+{
+  "port": 8882,
+  "protocol": "http",
+  "defaultResponse": {
+    "statusCode": 400,
+    "headers": {
+      "Connection": "Keep-Alive",
+      "Content-Length": 0
+    }
+  },
+  "stubs": [
+    {
+      "name": "shipping kerry",
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/shipping"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "inject": "<%-stringify(filename, 'response.js') %>"
+        }
+      ]
+    }
+  ]
+}

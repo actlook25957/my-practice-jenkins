@@ -1,0 +1,57 @@
+{
+  "port": 8882,
+  "protocol": "http",
+  "defaultResponse": {
+    "statusCode": 400,
+    "headers": {
+      "Connection": "Keep-Alive",
+      "Content-Length": 0
+    }
+  },
+  "stubs": [
+    {
+      "name": "payment visa",
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/payment/visa"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "inject": "<%-stringify(filename, 'response.js') %>"
+        }
+      ]
+    },
+    {
+      "name": "Card information",
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/card/information"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8"
+            },
+            "body": {
+              "card_number": "4719700591590995",
+              "cvv": 752,
+              "expired_month": 12,
+              "expired_year": 27,
+              "card_name": "SCK ShuHaRi"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
