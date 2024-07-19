@@ -72,11 +72,11 @@ pipeline {
     
   }
   
-  post {
-    always {
-      sh 'make stop_test_suite'
-      sh 'docker volume prune -f'
-    }
+  // post {
+  //   always {
+  //     sh 'make stop_test_suite'
+  //     sh 'docker volume prune -f'
+  //   }
 
-  }
+  // }
 }
