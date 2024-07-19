@@ -33,7 +33,7 @@ pipeline {
 
     stage('setup test fixtures') {
       steps {
-        sh 'make setup_test_fixtures'
+        sh 'docker compose up store-db -d'
       }
     }
 
