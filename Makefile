@@ -43,9 +43,9 @@ backend_unit_test:
 	cd store-service && go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 
 setup_test_fixtures:
-	docker compose up -d store-db bank-gateway shipping-gateway helloworld
+	docker compose up -d store-db bank-gateway shipping-gateway
 
-backend_integration_test: setup_test_fixtures
+backend_integration_test:
 	cd store-service && go test -tags=integration ./...
 	docker compose down 
 
